@@ -1,0 +1,21 @@
+body {
+  background-color: black;
+}
+
+div.container {
+  position: relative;
+}
+
+div#banner {
+  background-color: #555;
+  width: 25em;
+  height: 10em;
+  text-align: center;
+  position: absolute;
+  left: 14%;
+  top: 20%;
+}
+
+canvas#mCanvas {
+  background-color: burlywood;
+}
