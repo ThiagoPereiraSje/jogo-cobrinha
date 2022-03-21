@@ -1,8 +1,8 @@
-const banner = document.getElementById('banner');
+const banner = document.getElementById("banner");
 let timer = undefined;
 
 function start() {
-  banner.style.display = 'none';
+  banner.style.display = "none";
 
   if (!timer) {
     // Game Loop a cada 60ms
@@ -12,4 +12,5 @@ function start() {
 
 function gameLoop() {
   console.log("Game Loop!");
+  Game.update();
 }

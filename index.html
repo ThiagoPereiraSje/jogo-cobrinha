@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo da cobrinha</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div id="banner">
-      <h3>Jogo da cobrinha</h3>
-      <p>Use as setas para jogar</p>
-      <button onclick="start()">Iniciar</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogo da cobrinha</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="banner">
+        <h3>Jogo da cobrinha</h3>
+        <p>Use as setas para jogar</p>
+        <button onclick="start()">Iniciar</button>
+      </div>
+      <canvas id="mCanvas" width="800" height="500"></canvas>
     </div>
-    <canvas id="mCanvas" width="800" height="500"></canvas>
-  </div>
 
-  <script src="./js/main.js"></script>
-</body>
+    <script src="./js/entities/Game.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
 </html>
