@@ -1,16 +1,22 @@
-const banner = document.getElementById("banner");
-let timer = undefined;
+const Main = {
+  timer: undefined,
+  banner: document.getElementById("banner"),
+
+  hideBanner: function () {
+    this.banner.style.display = "none";
+  },
+
+  loop: function () {
+    console.log("Game Loop!");
+    Game.update();
+  },
+};
 
 function start() {
-  banner.style.display = "none";
+  Main.hideBanner();
 
-  if (!timer) {
+  if (!Main.timer) {
     // Game Loop a cada 60ms
-    timer = setInterval(gameLoop, 60);
+    Main.timer = setInterval(Main.loop, 60);
   }
-}
-
-function gameLoop() {
-  console.log("Game Loop!");
-  Game.update();
 }
