@@ -1,9 +1,11 @@
+const PLAYER_SIZE = 10;
+
 const Player = {
   x: 400,
   y: 250,
-  w: 10,
-  h: 10,
-  length: 10,
+  w: PLAYER_SIZE,
+  h: PLAYER_SIZE,
+  length: 1,
   coordinates: [],
 
   tick: function () {
@@ -33,6 +35,11 @@ const Player = {
       this.restart();
       return;
     }
+
+    if (recCollision(this, Food)) {
+      this.length++;
+      Food.restart();
+    }
   },
 
   render: function (ctx) {
@@ -52,9 +59,10 @@ const Player = {
   restart: function () {
     this.x = 400;
     this.y = 250;
-    this.length = 10;
+    this.length = 1;
     this.coordinates = [];
 
     clearCanvas();
+    Food.restart();
   },
 };

@@ -21,9 +21,10 @@ const Main = {
 function start() {
   Main.hideBanner();
   document.addEventListener("keydown", Keyboard.keydown);
+  Food.restart();
 
   if (!Main.timer) {
-    // Game Loop a cada 500ms
-    Main.timer = setInterval(Main.loop, 500);
+    // Game Loop a cada 250ms
+    Main.timer = setInterval(Main.loop, 250);
   }
 }

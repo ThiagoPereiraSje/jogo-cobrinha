@@ -1,11 +1,10 @@
 const Game = {
   tick: function () {
-    Food.tick();
     Player.tick();
   },
   render: function (ctx) {
-    Food.render(ctx);
     Player.render(ctx);
+    Food.render(ctx);
   },
   update: function (ctx) {
     this.tick();
