@@ -1,3 +1,5 @@
+const ctx = document.getElementById("mCanvas").getContext("2d");
+
 const Main = {
   timer: undefined,
   banner: document.getElementById("banner"),
@@ -7,8 +9,7 @@ const Main = {
   },
 
   loop: function () {
-    console.log("Game Loop!");
-    Game.update();
+    Game.update(ctx);
   },
 };
 

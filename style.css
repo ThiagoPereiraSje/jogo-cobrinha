@@ -7,7 +7,7 @@ div.container {
 }
 
 div#banner {
-  background-color: #555;
+  background-color: rgba(0, 0, 0, 0.4);
   width: 25em;
   height: 10em;
   text-align: center;

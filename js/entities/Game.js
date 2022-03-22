@@ -1,7 +1,13 @@
 const Game = {
   x: 1,
-  update: function () {
-    console.log("Game Update!");
-    console.log("x: ", this.x);
+  tick: function () {
+    console.log("tick!");
+  },
+  render: function (ctx) {
+    console.log("ctx: ", ctx);
+  },
+  update: function (ctx) {
+    this.tick();
+    this.render(ctx);
   },
 };
