@@ -7,25 +7,31 @@ const Player = {
   coordinates: [],
 
   tick: function () {
-    console.log("up: ", Keyboard.up);
-
     if (Keyboard.right) {
       this.x += this.w;
-      return;
-    }
-
-    if (Keyboard.left) {
+    } else if (Keyboard.left) {
       this.x -= this.w;
-      return;
     }
 
     if (Keyboard.down) {
       this.y += this.h;
+    } else if (Keyboard.up) {
+      this.y -= this.h;
+    }
+
+    if (this.coordinates.find((el) => el.x === this.x && el.y === this.y)) {
+      this.restart();
       return;
     }
 
-    if (Keyboard.up) {
-      this.y -= this.h;
+    if (this.x < 0 || this.x >= 800) {
+      this.restart();
+      return;
+    }
+
+    if (this.y < 0 || this.y >= 500) {
+      this.restart();
+      return;
     }
   },
 
@@ -41,5 +47,14 @@ const Player = {
     }
 
     this.coordinates.push({ x: this.x, y: this.y });
+  },
+
+  restart: function () {
+    this.x = 400;
+    this.y = 250;
+    this.length = 10;
+    this.coordinates = [];
+
+    clearCanvas();
   },
 };

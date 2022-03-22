@@ -1,5 +1,10 @@
 const ctx = document.getElementById("mCanvas").getContext("2d");
 
+function clearCanvas() {
+  ctx.fillStyle = "burlywood";
+  ctx.fillRect(0, 0, 800, 500);
+}
+
 const Main = {
   timer: undefined,
   banner: document.getElementById("banner"),
