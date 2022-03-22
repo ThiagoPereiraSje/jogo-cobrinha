@@ -1,10 +1,10 @@
 const Game = {
-  x: 1,
   tick: function () {
     console.log("tick!");
+    Player.tick();
   },
   render: function (ctx) {
-    console.log("ctx: ", ctx);
+    Player.render(ctx);
   },
   update: function (ctx) {
     this.tick();

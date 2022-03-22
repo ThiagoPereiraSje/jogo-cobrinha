@@ -18,4 +18,6 @@ div#banner {
 
 canvas#mCanvas {
   background-color: burlywood;
+  padding: 0;
+  margin: 0;
 }

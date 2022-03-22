@@ -17,7 +17,7 @@ function start() {
   Main.hideBanner();
 
   if (!Main.timer) {
-    // Game Loop a cada 60ms
-    Main.timer = setInterval(Main.loop, 60);
+    // Game Loop a cada 500ms
+    Main.timer = setInterval(Main.loop, 500);
   }
 }
