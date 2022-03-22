@@ -5,9 +5,30 @@ const Player = {
   h: 10,
   length: 10,
   coordinates: [],
+
   tick: function () {
-    this.x += this.w;
+    console.log("up: ", Keyboard.up);
+
+    if (Keyboard.right) {
+      this.x += this.w;
+      return;
+    }
+
+    if (Keyboard.left) {
+      this.x -= this.w;
+      return;
+    }
+
+    if (Keyboard.down) {
+      this.y += this.h;
+      return;
+    }
+
+    if (Keyboard.up) {
+      this.y -= this.h;
+    }
   },
+
   render: function (ctx) {
     ctx.fillStyle = "red";
     ctx.fillRect(this.x, this.y, this.w, this.h);

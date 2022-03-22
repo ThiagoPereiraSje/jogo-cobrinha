@@ -15,6 +15,7 @@ const Main = {
 
 function start() {
   Main.hideBanner();
+  document.addEventListener("keydown", Keyboard.keydown);
 
   if (!Main.timer) {
     // Game Loop a cada 500ms

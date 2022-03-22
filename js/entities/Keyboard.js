@@ -10,9 +10,13 @@ const Keyboard = {
   down: false,
 
   keydown: function (e) {
-    this.left = e.which === vkLeft;
-    this.right = e.which === vkRight;
-    this.up = e.which === vkUp;
-    this.down = e.which === vkDown;
+    if (![vkLeft, vkRight, vkDown, vkUp].includes(e.which)) {
+      return;
+    }
+
+    Keyboard.left = e.which === vkLeft;
+    Keyboard.right = e.which === vkRight;
+    Keyboard.up = e.which === vkUp;
+    Keyboard.down = e.which === vkDown;
   },
 };

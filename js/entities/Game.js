@@ -1,6 +1,5 @@
 const Game = {
   tick: function () {
-    console.log("tick!");
     Player.tick();
   },
   render: function (ctx) {
