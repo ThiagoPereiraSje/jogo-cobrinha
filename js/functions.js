@@ -1,11 +1,8 @@
 function getRandomInt(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
-  const value = Math.floor(Math.random() * (max - min)) + min;
 
-  console.log("valor: ", value);
-
-  return value;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 function recCollision(rec1, rec2) {

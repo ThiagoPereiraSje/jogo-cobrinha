@@ -6,6 +6,7 @@ const Player = {
   w: PLAYER_SIZE,
   h: PLAYER_SIZE,
   length: 1,
+  life: 3,
   coordinates: [],
 
   tick: function () {
@@ -22,16 +23,19 @@ const Player = {
     }
 
     if (this.coordinates.find((el) => el.x === this.x && el.y === this.y)) {
+      this.life--;
       this.restart();
       return;
     }
 
     if (this.x < 0 || this.x >= 800) {
+      this.life--;
       this.restart();
       return;
     }
 
     if (this.y < 0 || this.y >= 500) {
+      this.life--;
       this.restart();
       return;
     }
@@ -57,12 +61,16 @@ const Player = {
   },
 
   restart: function () {
+    clearCanvas();
+
+    if (this.life <= 0) {
+      gameOver();
+      return;
+    }
+
     this.x = 400;
     this.y = 250;
     this.length = 1;
     this.coordinates = [];
-
-    clearCanvas();
-    Food.restart();
   },
 };

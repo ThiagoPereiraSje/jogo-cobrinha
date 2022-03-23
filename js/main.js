@@ -1,16 +1,19 @@
 const ctx = document.getElementById("mCanvas").getContext("2d");
 
-function clearCanvas() {
-  ctx.fillStyle = "burlywood";
-  ctx.fillRect(0, 0, 800, 500);
-}
-
 const Main = {
   timer: undefined,
   banner: document.getElementById("banner"),
 
   hideBanner: function () {
-    this.banner.style.display = "none";
+    this.banner.classList.add("hide");
+  },
+
+  showBanner: function () {
+    this.banner.classList.remove("hide");
+  },
+
+  showGameOver: function () {
+    this.showBanner();
   },
 
   loop: function () {
@@ -21,10 +24,22 @@ const Main = {
 function start() {
   Main.hideBanner();
   document.addEventListener("keydown", Keyboard.keydown);
-  Food.restart();
+  Game.restart();
 
   if (!Main.timer) {
     // Game Loop a cada 250ms
     Main.timer = setInterval(Main.loop, 250);
   }
+}
+
+function clearCanvas() {
+  ctx.fillStyle = "burlywood";
+  ctx.fillRect(0, 0, 800, 500);
+}
+
+function gameOver() {
+  clearInterval(Main.timer);
+  Main.timer = undefined;
+  document.removeEventListener("keydown", Keyboard.keydown);
+  Main.showGameOver();
 }

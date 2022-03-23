@@ -10,4 +10,9 @@ const Game = {
     this.tick();
     this.render(ctx);
   },
+  restart: function () {
+    Player.life = 3;
+    Food.restart();
+    Player.restart();
+  },
 };
