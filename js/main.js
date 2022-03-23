@@ -3,6 +3,8 @@ const ctx = document.getElementById("mCanvas").getContext("2d");
 const Main = {
   timer: undefined,
   banner: document.getElementById("banner"),
+  header: document.getElementById("header"),
+  message: document.getElementById("message"),
 
   hideBanner: function () {
     this.banner.classList.add("hide");
@@ -13,6 +15,8 @@ const Main = {
   },
 
   showGameOver: function () {
+    this.header.innerHTML = "Game Over";
+    this.message.innerHTML = `Sua pontuação: <b>${Player.points}</b> pts`;
     this.showBanner();
   },
 

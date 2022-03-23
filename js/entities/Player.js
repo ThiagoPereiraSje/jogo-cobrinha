@@ -7,6 +7,7 @@ const Player = {
   h: PLAYER_SIZE,
   length: 1,
   life: 3,
+  points: 0,
   coordinates: [],
 
   tick: function () {
@@ -42,6 +43,7 @@ const Player = {
 
     if (recCollision(this, Food)) {
       this.length++;
+      this.points += 100;
       Food.restart();
     }
   },
@@ -71,6 +73,7 @@ const Player = {
     this.x = 400;
     this.y = 250;
     this.length = 1;
+    this.points = 0;
     this.coordinates = [];
   },
 };
