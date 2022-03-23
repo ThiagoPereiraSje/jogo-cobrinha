@@ -24,7 +24,7 @@ const Food = {
 
     this.x = getRandomInt(0, 79) * 10;
     this.y = getRandomInt(0, 49) * 10;
-    this.super = getRandomInt(0, 100) < 70;
+    this.super = getRandomInt(0, 100) < 40;
 
     if (this.super) {
       this.w = PRIMO_SIZE;

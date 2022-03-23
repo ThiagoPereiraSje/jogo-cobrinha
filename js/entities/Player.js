@@ -42,8 +42,14 @@ const Player = {
     }
 
     if (recCollision(this, Food)) {
-      this.length++;
-      this.points += 100;
+      if (Food.super) {
+        this.length += 8;
+        this.points += 800;
+      } else {
+        this.length++;
+        this.points += 100;
+      }
+
       Food.restart();
     }
   },
