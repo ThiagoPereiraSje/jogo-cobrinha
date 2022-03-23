@@ -21,6 +21,15 @@ div.screen {
   display: none;
 }
 
+div#panel {
+  color: white;
+  font-size: 20px;
+}
+
+div#panel span {
+  margin-left: 50px;
+}
+
 canvas#mCanvas {
   background-color: burlywood;
   padding: 0;
